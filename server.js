@@ -29,6 +29,10 @@ module.exports = function(opts, callback) {
         sources: process.env.SOURCE_CACHE_SIZE || opts.sourceCacheSize
       });
 
+  app.get('/health', function(req, res) {
+    res.status(200).send();
+  });
+
   callback = callback || function() {};
 
   // load and register tilelive modules
